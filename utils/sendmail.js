@@ -2,15 +2,15 @@ const
     nodemailer = require('nodemailer'),
     smtpTransport = require('nodemailer-smtp-transport'),
     wellknown = require("nodemailer-wellknown");
-let transporter, config = wellknown("QQ");
+let transporter, config = wellknown("QQ"); //QQ or gmail or 其他邮箱 用作发送邮件的邮箱需要预先开启 相应的服务
 config.auth = {
-    user: 'your email', 
+    user: 'your email',
     pass: 'your password'
 }
 transporter = nodemailer.createTransport(smtpTransport(config));
 function sendMail(mail, code) {
     let mailOptions = {
-        from: "前端明辉<webmingh@qq.com>",
+        from: "网站验证",//
         to: `${mail}`,
         subject: "网站账号验证",
         text: "一封来自前端明辉网站验证邮件",
