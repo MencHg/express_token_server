@@ -4,8 +4,8 @@ const
     wellknown = require("nodemailer-wellknown");
 let transporter, config = wellknown("QQ");
 config.auth = {
-    user: 'webmingh@qq.com',
-    pass: 'fqrlezyalwmxbgjh'
+    user: 'your email', 
+    pass: 'your password'
 }
 transporter = nodemailer.createTransport(smtpTransport(config));
 function sendMail(mail, code) {
